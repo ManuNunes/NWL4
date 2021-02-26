@@ -27,6 +27,6 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test":"set NODE_ENV=test&&jest",
-    "pretest": "cd src/database/ && del /f database.teste.sqlite"
+    "posttest": "rimraf ./src/database/database.teste.sqlite"
   }
 }

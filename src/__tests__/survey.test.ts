@@ -15,5 +15,16 @@ describe("Surveys", () => {
         description: "Description Exemple "
         })
     expect(response.status).toBe(201)
+    expect(response.body).toHaveProperty("id")
+    })
+
+    it(" ser capaz de listar todas as pesquisas",async ()=>{
+      await request(app).post("/Surveys").send({
+        title:"Titulo 2",
+        description:"Description 2"
+      })
+      const response = await request(app).get('/Surveys')
+
+      expect(response.body.length).toBe(2)
     })
 })
