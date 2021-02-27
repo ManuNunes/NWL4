@@ -12,7 +12,7 @@ class User{
     email:string;
     @CreateDateColumn()
     created_at:Date
-
+    //Cria uma chave UUID automaticamente quando o model é chamado pelo controller, se não existir
     constructor(){
         if(!this.id){
             this.id = uuid()
